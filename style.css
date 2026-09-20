@@ -5,5 +5,85 @@
     font-family: 'Poppins' ,
     sans-serif;
     text-decoration: none;
+    scroll-behavior: smooth;
     list-style: none;
+}
+
+header{
+    position: fixed; /* The header won't move while scrolling*/
+    top: 1rem; /**/
+    left: 50%; /*center it left*/
+    transform: translateX(-50%); /*center header using its own width*/
+    display: flex; /* Flex container */
+    align-items: center; /**/
+    justify-content: center; /**/
+    gap: 5rem; /* Add a gap */
+    background-color: rgba(0,0,0,0.8); /*Setting background to transparent black*/
+    backdrop-filter: blur(8px); /*Create a glass effect*/
+    color:white; /*Text color*/
+    padding: 0.5rem 1.5rem; /*Padding inner header*/
+    border-radius: 3rem; /*Created rounded corners*/
+    z-index: 1000; /*Make sure the header sits very high above our content*/
+}
+
+.logo{
+    color: white; /* Text color */
+    font-size: 1.3rem; /* Increase font size */
+    font-weight: 600; /* Increase font weight */
+    text-wrap: nowrap; /* Prevent wrapping when screen view gets smaller */
+    transition:0.3s ease-in-out; /* Transition for hover effect */
+}
+
+.logo:hover{
+    transform: scale(1.1); /* Increase size when hovering */
+}
+
+.nav-links{
+    display: flex; 
+    gap: 2rem; /* Gap between text */
+}
+
+li a{
+    position: relative; /* Helpful for hover effect */
+    color: white;
+    font-weight: 300;
+
+}
+
+li a::before{ /* Creates element in the page */
+    position: absolute;
+    content: '';
+    width: 0;
+    left: 0;
+    height: 5px;
+    top: 25px;
+    border-radius: 1rem;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to right, rgb(0, 157, 255), rgb(255,0,255));
+}
+
+li a:hover::before{
+    width: 100%
+}
+.visit-btn{
+    padding: 0.8rem 1.5rem;
+    border-radius: 3rem;
+    border: none;
+    font-weight: 500;
+    font-size: 1rem;
+    color: white;
+    cursor: pointer;
+    text-wrap: nowrap;
+    transition: 0.3s ease-in-out;
+    background: linear-gradient(to right, rgb(0, 157, 255), rgb(255,0,255));
+}
+
+.visit-btn:hover{
+    background: linear-gradient(to right, rgb(255,0,255),rgb(0, 157, 255) );
+    transform: scale(1.03);
+}
+
+#menu-icon{
+    font-size: 2rem;
+    display: none;
 }
